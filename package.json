@@ -11,7 +11,7 @@
     "bootstrap": "3.3.7",
     "react": "16.6.0",
     "react-bootstrap": "0.32.4",
-    "react-dom": "16.6.0",
+    "react-dom": "16.6.0"
   },
   "devDependencies": {
     "@babel/core": "7.1.6",
