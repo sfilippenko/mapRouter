@@ -1,0 +1,48 @@
+$color: #ccc;
+$textPadding: 10px;
+$textPaddingRight: 15px;
+
+.medium-block {
+  margin-bottom: 40px;
+}
+
+.question {
+  background: #eee;
+}
+
+.label-block {
+  margin-top: 40px;
+  &__label {
+    display: flex;
+    align-items: stretch;
+    position: relative;
+    border: 1px solid $color;
+    border-radius: 4px;
+    margin-bottom: 10px;
+  }
+  &__handler {
+    cursor: move;
+    background: $color;
+    flex: 0 0 40px;
+  }
+  &__text {
+    padding: $textPadding $textPaddingRight $textPadding $textPadding;
+  }
+  &__remove {
+    position: absolute;
+    right: $textPaddingRight / 2;
+    top: 50%;
+    transform: translate(50%, -50%);
+    cursor: pointer;
+  }
+}
+
+
+.spinner {
+  box-sizing: border-box;
+  border: 2px solid transparent;
+  border-top-color: coral;
+  border-bottom-color: coral;
+  border-radius: 50%;
+  animation: spinner 700ms ease infinite;
+}

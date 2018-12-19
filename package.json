@@ -4,14 +4,21 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --mode development --hot --host 0.0.0.0",
-    "build": "webpack --mode production"
+    "dev": "webpack-dev-server --mode development --hot --host 0.0.0.0",
+    "build": "webpack --mode production",
+    "postinstall": "npm run build",
+    "start": "node server"
+  },
+  "engines": {
+    "node": "8.11.2"
   },
   "dependencies": {
     "bootstrap": "3.3.7",
+    "express": "^4.16.4",
     "react": "16.6.0",
     "react-bootstrap": "0.32.4",
-    "react-dom": "16.6.0"
+    "react-dom": "16.6.0",
+    "react-sortable-hoc": "^0.8.4"
   },
   "devDependencies": {
     "@babel/core": "7.1.6",
