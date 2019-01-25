@@ -30,7 +30,6 @@ export default class MapRouter extends React.PureComponent {
     render() {
         const {labelList, onAddLabel, onChange, text, onDeleteLabel, onSortEnd} = this.props;
         const {mapLoaded} = this.state;
-        console.log(labelList);
         return (
             <div>
                 <Row>
@@ -38,7 +37,7 @@ export default class MapRouter extends React.PureComponent {
                         {
                             mapLoaded &&
                             <div>
-                                <form onSubmit={onAddLabel(this.objectCollection)}>
+                                <form onSubmit={onAddLabel(this.map, this.objectCollection)}>
                                     <FormGroup
                                         controlId='label'
                                     >

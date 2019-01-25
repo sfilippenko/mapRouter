@@ -1,7 +1,6 @@
 import React from 'react';
 import {Tab, Tabs} from 'react-bootstrap';
 import {arrayMove} from 'react-sortable-hoc';
-import Questions from './Questions';
 import MapRouter from './MapRouter';
 import favicon from '../images/favicon.png';
 
@@ -23,11 +22,10 @@ export default class Main extends React.PureComponent {
         ],
     };
 
-    onAddLabel = (objectCollection) => (e) => {
+    onAddLabel = (map, objectCollection) => (e) => {
         e.preventDefault();
         const {labelList, text} = this.state;
-        const getRandom = () => 0.05 * Math.random() * (Math.random() > 0.5 ? 1 : -1);
-        const newLabelList = [...labelList, {text, timestamp: Date.now(), coordinates: [55.76 + getRandom(), 37.64 + getRandom()]}];
+        const newLabelList = [...labelList, {text, timestamp: Date.now(), coordinates: map.getCenter()}];
         this.setState({text: '', labelList: newLabelList, order: newLabelList.map((item) => String(item.timestamp))});
         this.rerenderMapObjects(newLabelList, objectCollection);
     };
@@ -122,7 +120,7 @@ export default class Main extends React.PureComponent {
                         eventKey='questions'
                         title='Вопросы'
                     >
-                        <Questions/>
+                        <h1>Здесь могла быть ваша реклама</h1>
                     </Tab>
                     <Tab
                         eventKey='map'
